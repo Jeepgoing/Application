@@ -1,0 +1,11 @@
+# Kconfig - general configuration options
+
+#
+# Copyright (c) 2018 amine
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+mainmenu "Application Configuration"
+
+source "components/Kconfig"
+
