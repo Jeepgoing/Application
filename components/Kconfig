@@ -7,7 +7,8 @@
 #
 
 
-menu "Comm Options"
+menu "Components"
 
+source "components/comm/Kconfig"
 
 endmenu

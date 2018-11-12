@@ -3,8 +3,6 @@ enable_language(C CXX ASM)
 
 add_library(platform_interface INTERFACE)
 
-#platform_library_named(zephyr)
-
 platform_include_directories(
   include
   ${PROJECT_BINARY_DIR}/include/generated
@@ -57,8 +55,6 @@ add_subdirectory(subsys)
 get_property(PLATFORM_LIBS_PROPERTY GLOBAL PROPERTY PLATFORM_LIBS)
 
 foreach(platform_lib ${PLATFORM_LIBS_PROPERTY})
-  add_dependencies(${platform_lib} offsets_h)
-
   get_target_property(lib_imported ${platform_lib} IMPORTED)
   get_target_property(lib_sources  ${platform_lib} SOURCES)
   if(lib_sources STREQUAL lib_sources-NOTFOUND

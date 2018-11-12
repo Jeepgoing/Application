@@ -5,9 +5,13 @@
  */
 
 #include <stdio.h>
+#include "comm.h"
 
 void main(void)
 {
+#ifdef CONFIG_COMM
+    comm_echo();
+#endif
 	printf("Hello World!\n");
 }
 

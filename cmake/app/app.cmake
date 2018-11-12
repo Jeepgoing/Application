@@ -7,7 +7,7 @@
 #
 # Under these restraints we use a second 'cmake_minimum_required'
 # invocation in every toplevel CMakeLists.txt.
-cmake_minimum_required(VERSION 3.8.2)
+cmake_minimum_required(VERSION 3.5)
 
 set(APPLICATION_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE PATH "Application Source Directory")
 set(APPLICATION_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR} CACHE PATH "Application Binary Directory")
@@ -28,24 +28,13 @@ include(${PLATFORM_BASE}/cmake/extensions.cmake)
 include(${PLATFORM_BASE}/cmake/kconfig.cmake)
 include(${PLATFORM_BASE}/cmake/toolchain.cmake)
 
-if(CONF_FILE)
-
-elseif(EXISTS   ${APPLICATION_SOURCE_DIR}/prj.conf)
-  set(CONF_FILE ${APPLICATION_SOURCE_DIR}/prj.conf)
-endif()
-
-#platform_library_named(app)
+platform_executable(app)
 
 add_subdirectory(${PLATFORM_BASE} ${__build_dir})
 
 get_property(PLATFORM_LIBS_PROPERTY GLOBAL PROPERTY PLATFORM_LIBS)
 foreach(platform_lib ${PLATFORM_LIBS_PROPERTY})
-  string(TOUPPER ${platform_lib} platform_lib_upper_case)
-  target_link_libraries(
-    app
-    PUBLIC
-    ${platform_lib}
-    )
+  target_link_libraries(app PUBLIC ${platform_lib})
 endforeach()
 
 

@@ -15,10 +15,8 @@ endif()
 
 set(DOTCONFIG       ${PROJECT_BINARY_DIR}/.config)
 
-set(CONF_FILE ${APPLICATION_SOURCE_DIR}/prj.conf)
-
-if(CONF_FILE)
-string(REPLACE " " ";" CONF_FILE_AS_LIST "${CONF_FILE}")
+if(EXISTS ${APPLICATION_SOURCE_DIR}/prj.conf)
+    set(CONF_FILE ${APPLICATION_SOURCE_DIR}/prj.conf)
 endif()
 
 set(ENV{srctree}            ${PLATFORM_BASE})
@@ -39,8 +37,8 @@ file(GLOB config_files ${APPLICATION_BINARY_DIR}/*.conf)
 list(SORT config_files)
 set(
   merge_config_files
-  ${DOTCONFIG}
-  ${CONF_FILE_AS_LIST}
+  ${CONF_FILE}
+  ${config_files}
 )
 
 # Create a list of absolute paths to the .config sources from
