@@ -35,3 +35,5 @@ fi
 export PLATFORM_BASE=$( builtin cd "$( dirname "$DIR"  )" > /dev/null && pwd ${PWD_OPT} )
 unset PWD_OPT
 
+export CROSS_COMPILE=${PLATFORM_BASE}/toolchain/aarch64-linux-gnu/bin/aarch64-linux-gnu-
+
