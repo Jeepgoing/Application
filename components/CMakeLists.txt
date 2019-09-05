@@ -1,1 +1,3 @@
 add_subdirectory_ifdef(CONFIG_COMM comm)
+add_subdirectory_ifdef(CONFIG_PROTOCOL protocol)
+
