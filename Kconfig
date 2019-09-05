@@ -9,3 +9,5 @@ mainmenu "Application Configuration"
 
 source "components/Kconfig"
 
+source "subsys/Kconfig"
+

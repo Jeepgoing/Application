@@ -1,0 +1,11 @@
+# Kconfig - cjson module options
+#
+# Copyright (c) 2018 Noitom
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+config CJSON
+	bool "cJSON"
+	default n
+

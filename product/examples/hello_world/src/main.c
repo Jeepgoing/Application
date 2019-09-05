@@ -13,6 +13,9 @@
 #ifdef CONFIG_PROTOCOL
 #include "components/protocol.h"
 #endif
+#ifdef CONFIG_CJSON
+#include "subsys/cJSON.h"
+#endif
 
 int main(int argc, char *argv[])
 {
