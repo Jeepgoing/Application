@@ -6,6 +6,8 @@ add_library(platform_interface INTERFACE)
 platform_include_directories(
   include
   ${PROJECT_BINARY_DIR}/include/generated
+  ../rootfs_new/usr/include
+  ../rootfs_new/usr/include/aarch64-linux-gnu
 )
 
 # We need to set an optimization level.
