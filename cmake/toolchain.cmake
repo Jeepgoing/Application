@@ -1,7 +1,6 @@
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR arm64)
 
-set(CMAKE_FIND_ROOT_PATH  $ENV{PLATFORM_BASE}/toolchain/aarch64-linux-gnu/)
 message(INFO ${CMAKE_FIND_ROOT_PATH})
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
@@ -11,8 +10,8 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CC gcc)
 set(CXX g++)
 
-set(CROSS_COMPILE $ENV{PLATFORM_BASE}/toolchain/aarch64-linux-gnu/bin/aarch64-linux-gnu-)
-set(TOOLCHAIN_HOME $ENV{PLATFORM_BASE}/toolchain/aarch64-linux-gnu)
+set(CROSS_COMPILE /opt/FriendlyARM/toolchain/6.4-aarch64/bin/aarch64-linux-gnu-)
+set(TOOLCHAIN_HOME /opt/FriendlyARM/toolchain/6.4-aarch64/bin/)
 set(CMAKE_C_COMPILER ${CROSS_COMPILE}${CC})
 #find_program(CMAKE_C_COMPILER ${CROSS_COMPILE}gcc   PATH ${TOOLCHAIN_HOME} NO_DEFAULT_PATH)
 #find_program(CMAKE_C_COMPILER ${CROSS_COMPILE}gcc   PATH ${TOOLCHAIN_HOME} NO_DEFAULT_PATH)
